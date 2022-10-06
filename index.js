@@ -19,7 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 18
+if(votingAge >= 18) {
+  console.log("true")
+}
 
 
 /*
@@ -33,8 +36,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let firstThing = 10
+const secondThing = 10
+if(firstThing === secondThing){
+  firstThing = 15
+}
+console.log(firstThing)
 
 
 
@@ -48,7 +55,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let stringToConvert = "1999"
+console.log(Number(stringToConvert))
 
 
 
@@ -64,7 +72,9 @@ Do the following:
 function multiply(num1, num2){
   return num1 * num2;
 }
-
+const multiplyFunctions = (a,b) => {
+  return multiply(a,b)
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -77,8 +87,9 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(humanAge){
+  const humanAgetoDogAge = humanAge * 7
+  return humanAgetoDogAge
 }
 
 
@@ -129,8 +140,29 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight,age){
+  if (age < 2/12) {
+    return
+  }
+  if (age < 4/12) {
+    return weight * 10/100
+  }
+  if (age < 7/12) {
+    return weight * 5/100
+  }
+  if (age < 1) {
+    return weight * 4/100
+  }
+  if (weight <= 5) {
+    return weight * 5/100
+  }
+  if (weight <= 10) {
+    return weight * 4/100
+  }
+  if (weight <= 15){
+    return weight * 3/100
+  }
+    return weight * 2/100
 }
 
 
@@ -155,9 +187,31 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-
+const rps = ["paper","rock","scissors"]
+const computerMove = rps[Math.floor(Math.random() * rps.length)]
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer) {
+    return "it's a tie"
+  }
+  if(user === "scissors" && computer === "rock"){
+    return "you lose!"
+  }
+  if(user === "scissors" && computer === "paper"){
+    return "you win!"
+  }
+  if(user === "paper" && computer === "rock"){
+    return "you win!"
+  }
+  if(user === "paper" && computer === "scissors"){
+    return "you lose!"
+  }
+  if(user === "rock" && computer === "paper"){
+    return "you lose!"
+  }
+  if(user === "rock" && computer === "scissors"){
+    return "you win!"
+  }
+  
 }
 
 
@@ -173,8 +227,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  const mileConversion = kilometers * .621371
+  return mileConversion
 }
 
 
@@ -187,8 +242,9 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(centimeters){
+  const centimeterConversion = centimeters / 30.48
+  return centimeterConversion
 }
 
 
@@ -207,10 +263,12 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(amountOfBottles){
+      return `${amountOfBottles} bottles of soda on the wall, ${amountOfBottles} bottles of soda, take one down pass it around ${amountOfBottles - 1} bottles of soda on the wall`
 }
-
+for(let i = 99; i > 0; i--){
+  annoyingSong(i)
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -227,8 +285,17 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if (score < 60){
+    return "you got an F"
+  } if (score < 70){
+    return "you got a D"
+  } if (score < 80){
+    return "you got a C"
+  } if (score < 90){
+    return "you got a B"
+  }
+  return "you got an A"
 }
 
 
